@@ -17,6 +17,14 @@ namespace interpreter
 		//@operators
 		ASSIGN,
 		PLUS,
+		MINUS,
+		BANG,	  //!
+		ASTERISK, //*
+		SLASH,
+		LT,
+		GT,
+		EQ,
+		NOT_EQ,
 
 		//@ delimiters
 		LPAREN,
@@ -28,6 +36,11 @@ namespace interpreter
 
 		// Keywords
 		FUNCTION,
-		LET
+		LET,
+		TRUE,
+		FALSE,
+		IF,
+		ELSE,
+		RETURN
 	};
 }

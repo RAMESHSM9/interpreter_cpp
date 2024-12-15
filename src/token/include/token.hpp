@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <map>
 #include <constants.hpp>
 
 namespace interpreter
@@ -12,6 +13,7 @@ namespace interpreter
 	class Token
 	{
 	public:
+		Token();
 		Token(TokenType type, std::string literal);
 
 		~Token();
@@ -24,9 +26,13 @@ namespace interpreter
 
 		std::string getTokenLiteral();
 
+		TokenType lookupIdentifier(const std::string &identifier);
+
 	private:
+		void populateKeyWords();
 		TokenType _type;
 		std::string _literal;
+		std::map<std::string, TokenType> keyWords;
 	};
 
 }
